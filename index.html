@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gentle Petales | Italian Charm Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <span class="brand-mark">GP</span>
+      <span>
+        <strong>Gentle Petales</strong>
+        <small>Italian Charm Studio</small>
+      </span>
+    </a>
+    <nav>
+      <a href="#builder">Builder</a>
+      <a href="#catalog">Charms</a>
+      <a href="#order">Order</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Made to order</span>
+        <h1>Build your own Italian charm bracelet.</h1>
+        <p>Choose your bracelet size, add your favorite charms, rearrange them, and send your finished design to us.</p>
+        <a class="primary-btn" href="#builder">Start building</a>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="mini-bracelet">
+          <span>♡</span><span>G</span><span>✿</span><span>★</span><span>☁</span><span>♡</span>
+        </div>
+        <p>Your story, one link at a time.</p>
+      </div>
+    </section>
+
+    <section class="builder-section" id="builder">
+      <div class="section-heading">
+        <span class="eyebrow">Step 1</span>
+        <h2>Choose bracelet size</h2>
+        <p>Select how many charm slots you want.</p>
+      </div>
+
+      <div class="size-picker" id="sizePicker">
+        <button data-size="15">15 links</button>
+        <button data-size="16" class="active">16 links</button>
+        <button data-size="17">17 links</button>
+        <button data-size="18">18 links</button>
+      </div>
+
+      <div class="builder-card">
+        <div class="builder-topline">
+          <div>
+            <span class="eyebrow">Step 2</span>
+            <h2>Your bracelet</h2>
+          </div>
+          <button class="text-btn" id="clearBtn">Clear all</button>
+        </div>
+
+        <p class="helper">Click a slot, then choose a charm below. Drag filled slots to rearrange.</p>
+        <div class="bracelet-wrap">
+          <div class="bracelet" id="bracelet" aria-label="Bracelet builder"></div>
+        </div>
+
+        <div class="summary-strip">
+          <div><small>Selected</small><strong id="selectedCount">0 / 16</strong></div>
+          <div><small>Charm total</small><strong id="charmTotal">₱0</strong></div>
+          <div><small>Delivery</small><strong>₱50</strong></div>
+          <div class="grand"><small>Estimated total</small><strong id="grandTotal">₱50</strong></div>
+        </div>
+      </div>
+
+      <div class="section-heading catalog-head" id="catalog">
+        <span class="eyebrow">Step 3</span>
+        <h2>Choose your charms</h2>
+        <p>Use the category tabs to browse. Replace these sample charms with your actual inventory photos anytime.</p>
+      </div>
+
+      <div class="category-tabs" id="categoryTabs"></div>
+      <div class="charm-grid" id="charmGrid"></div>
+    </section>
+
+    <section class="order-section" id="order">
+      <div class="section-heading">
+        <span class="eyebrow">Step 4</span>
+        <h2>Send your order</h2>
+        <p>Your selected charm list will automatically be included.</p>
+      </div>
+
+      <form id="orderForm" class="order-form">
+        <div class="field-grid">
+          <label>
+            Full name
+            <input id="customerName" required placeholder="Your name" />
+          </label>
+          <label>
+            Contact number
+            <input id="contact" required placeholder="09XX XXX XXXX" />
+          </label>
+          <label>
+            Facebook / Instagram
+            <input id="social" placeholder="@username" />
+          </label>
+          <label>
+            Order method
+            <select id="method">
+              <option>Delivery</option>
+              <option>Meet-up / Pickup</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Address / meetup details
+          <textarea id="address" rows="3" placeholder="Barangay, landmark, or meetup location"></textarea>
+        </label>
+
+        <label>
+          Notes
+          <textarea id="notes" rows="3" placeholder="Any preferred arrangement, gift note, deadline, etc."></textarea>
+        </label>
+
+        <div class="order-preview">
+          <h3>Order preview</h3>
+          <pre id="orderPreview">No charms selected yet.</pre>
+        </div>
+
+        <div class="order-actions">
+          <button type="button" class="primary-btn" id="copyOrder">Copy order details</button>
+          <button type="submit" class="secondary-btn">Prepare Messenger message</button>
+        </div>
+
+        <p class="notice">Prices are subject to change without prior notice. Made to order. Delivery fee is ₱50.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Gentle Petales</strong>
+    <span>Italian charms • made to order</span>
+  </footer>
+
+  <div class="toast" id="toast">Copied!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
